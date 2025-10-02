@@ -1,6 +1,6 @@
 import React from "react";
 
-const Child = ({ todos, handleClick }) => {
+const Child = ({ todos, handleComplete }) => {
   return (
     <div>
       <h1>Child Component</h1>
@@ -9,7 +9,7 @@ const Child = ({ todos, handleClick }) => {
           <li key={todo.id}>
             {todo.text}{" "}
             {!todo.completed && (
-              <button onClick={() => handleClick(todo.id)}>Complete</button>
+              <button onClick={() => handleComplete(todo.id)}>Complete</button>
             )}
           </li>
         ))}

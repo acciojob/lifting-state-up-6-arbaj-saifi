@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Child from "./child";
 import "./../styles/App.css";
+import Child from "./child";
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -9,16 +9,18 @@ const App = () => {
     { id: 3, text: "Build a Project", completed: false },
   ]);
 
-  const handleClick = (id) => {
-    setTodos((prev) =>
-      prev.map((todo) => (todo.id === id ? { ...todo, completed: true } : todo))
+  const handleComplete = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: true } : todo
+      )
     );
   };
+
   return (
-    <div>
-      {/* Do not remove the main div */}
-      <h1>Parent Component</h1>
-      <Child todos={todos} handleClick={handleClick} />
+    <div className="parent">
+      <h1>Todo App</h1>
+      <Child todos={todos} handleComplete={handleComplete} />
     </div>
   );
 };
