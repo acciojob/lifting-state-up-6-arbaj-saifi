@@ -8,7 +8,7 @@ const Child = ({ todos, handleClick }) => {
         {todos.map((todo) => (
           <li key={todo.id}>
             {todo.text}{" "}
-            {todo.completed && (
+            {!todo.completed && (
               <button onClick={() => handleClick(todo.id)}>Complete</button>
             )}
           </li>
