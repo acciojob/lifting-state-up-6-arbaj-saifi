@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div className="parent">
-      <h1>Todo App</h1>
+      <h1>Parent Component</h1>
       <Child todos={todos} handleComplete={handleComplete} />
     </div>
   );
